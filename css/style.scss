@@ -1,0 +1,422 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+
+
+// VARS
+$white: #fff;
+$black: #000;
+$textGray: #fff;
+$orange: #ff6600;
+
+// MIXIN
+@mixin beforeShadow($opacity) {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    opacity: $opacity;
+    left: 0;
+    top: 0;
+}
+
+@mixin backgroundImage($url) {
+    background: black url($url);
+    background-size: cover;
+    background-position: center;
+}
+
+// EXTEND
+%sectionBoxShadow {
+    // box-shadow: 0 0px 20px 10px rgba(0, 0, 0, 0.4);
+}
+
+%zIndexUp {
+    z-index: 112;
+}
+
+%zIndexDown {
+    z-index: 111;
+}
+
+//BASIC
+html,
+body {
+    font-family: 'KoPub Batang', serif;
+    word-break: keep-all;
+
+}
+
+#stage {
+    // width: 1600x !important;
+    // height: 1000px !important;
+    top: 0;
+    left: 0;
+}
+
+// ANIMATION
+.waypointOne,
+.waypointTwo,
+.waypointThree {
+    opacity: 0;
+}
+
+// MODULE
+h1 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+span {
+    font-size: 1rem;
+}
+
+b {
+    color: $orange;
+}
+
+.dividerHorz {
+    width: 100%;
+    height: 2px;
+    display: block;
+    background: $white;
+
+}
+
+.borderContainer {
+    border: 2px solid #fff;
+}
+
+// LAYOUT
+body {
+    background: $black;
+    color: $white;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    z-index: 121;
+
+    .navMenu {
+        width: 10px;
+        height: 10px;
+        background: transparent;
+        border: 1px solid $white;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .navMenu.active {
+        background: $white;
+    }
+}
+
+// CONTENTS
+.canvas-background {
+
+    #text {
+        position: absolute;
+    }
+
+    #stage {
+        width: 100%;
+        // height: 680px;
+        opacity: 1;
+        position: absolute;
+        z-index: 101;
+    }
+}
+
+.contContainer {
+    display: inline-block;
+    width: auto;
+    padding: 50px;
+    border: 2px solid $white;
+    text-align: center;
+}
+
+.contWrapper {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-width: 480px;
+    vertical-align: middle;
+
+    &.contWrapper--dispInBlock {
+        display: inline-block;
+    }
+}
+
+section {
+    padding: 160px 20px;
+
+    .contWrapper {
+        padding: 20px;
+
+        &.txt-align-left {
+
+            h2,
+            h3,
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    width: 100%;
+    // max-width: 1134px;
+    margin: 0 auto;
+
+    text-align: center;
+    position: relative;
+    z-index: 111;
+
+    h1 {
+        margin-bottom: 10px;
+        line-height: 1.4;   
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: bold;
+        color: $white;
+        text-align: left;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: 20px;
+        color: $white;
+        text-align: left;
+        line-height: 1.3;
+        font-family: 'Noto Sans KR', sans-serif;
+
+        &+p {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    }
+
+    h4 {}
+
+    p {
+        font-size: 14px;
+        color: $textGray;
+        text-align: left;
+        line-height: 1.7;
+        white-space: pre-line;
+    }
+}
+
+section.s1 {
+    padding: 100px 20px 140px;
+    max-width: none;
+
+    .contWrapper {
+        padding: 20px;
+        max-width: 580px;
+        z-index: 111;
+        position: relative;
+
+
+    }
+
+    span {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .dividerHorz {
+        width: 200px;
+        margin: 30px auto 30px;
+    }
+
+    .contContainer {
+        margin-top: 40px;
+    }
+}
+
+section.s3 {
+    @extend %sectionBoxShadow;
+    @extend %zIndexUp;
+    @include backgroundImage('../img/court-01.jpg');
+
+    padding: 140px 20px;
+
+    &::before {
+        @include beforeShadow(0.7);
+        // background-color: #3c3100;
+    }
+
+    .contWrapper {
+        margin: 0 20px;
+    }
+
+    ul.contList li {
+        text-align: left;
+        border-bottom: 1px solid #fff;
+        padding: 20px 10px;
+    }
+
+    ul.contList li:last-child {
+        border-bottom: 0;
+    }
+
+    ul.contList li strong {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 40px;
+        vertical-align: middle;
+        line-height: 1;
+    }
+
+    ul.contList li span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    }
+}
+
+section.s4 {
+    @extend %sectionBoxShadow;
+    @extend %zIndexUp;
+    padding: 160px 20px;
+    @include backgroundImage('../img/01.png');
+
+
+
+    &::before {
+        @include beforeShadow(0);
+
+    }
+    // background: #001438;
+    // background: #282537;
+    // background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    // background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    // background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    // background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+
+    // .imgBackground {
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: -1;
+    //     width: 100%;
+    //     height: 100%;
+    //     display: block;
+
+    // }
+}
+
+section.s5 {
+    @extend %sectionBoxShadow;
+    @extend %zIndexUp;
+    @include backgroundImage('../img/cause-01.jpg');
+
+    padding: 160px 20px;
+
+    &::before {
+        @include beforeShadow(0.8);
+        background-color:#4c0000;
+    }
+}
+
+section.s6 {
+    @extend %sectionBoxShadow;
+    @extend %zIndexUp;
+    @include backgroundImage('../img/cause-02.jpg');
+
+    padding: 160px 20px;
+
+    &::before {
+        @include beforeShadow(0.8);
+  
+    }
+}
+
+section.s7 {
+    @extend %sectionBoxShadow;
+    @extend %zIndexUp;
+    @include backgroundImage('../img/cause-03.jpg');
+
+    &::before {
+        @include beforeShadow(0.7);
+    }
+
+    padding: 160px 20px;
+}
+
+section.s8 {
+@extend %sectionBoxShadow;
+@include backgroundImage('../img/choi-01.jpg');
+padding: 260px 20px 260px; 
+&::before {
+    @include beforeShadow(0.8);
+    background-color: #092306;
+}
+z-index:112;
+}
+
+section.s10 {
+@extend %sectionBoxShadow;
+@include backgroundImage('../img/judge02.jpg');
+padding: 260px 20px 360px; 
+&::before {
+    @include beforeShadow(0.8);
+    background-color: #562f03;
+}
+z-index: 113;
+}
+
+section.s11 {
+    @extend %sectionBoxShadow;
+    @include backgroundImage('../img/candle02.jpg');
+    padding: 260px 20px 360px; 
+    &::before {
+        @include beforeShadow(0.7);
+        // background-color: #2b2b00;
+    }
+    z-index: 114;
+}
+
+section.s12 {
+    @extend %sectionBoxShadow;
+    @include backgroundImage('../img/order.jpg');
+    z-index: 115;
+    &::before {
+        @include beforeShadow(0.7);
+        // background-color: #3e3201;
+    }
+
+    .contWrapper {
+        padding: 800px 20px 100px;
+    }
+    // background: #092756;
+    // background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    // background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    // background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    // background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    // background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
+}
+
+section.s13 {
+@extend %sectionBoxShadow;
+@include backgroundImage('../img/sewol03.jpg');
+
+    padding: 300px 20px 300px;
+z-index: 116;
+&::before {
+    @include beforeShadow(0.7);
+    background-color: #3c3100;
+}
+
+}

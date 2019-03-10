@@ -53,13 +53,18 @@ $('.waypointTwo').waypoint(function (direction) {
 
 $('.waypointThree').waypoint(function (direction) {
     if(direction === "down") {
-        this.element.classList.remove("fadeOutRight");
-        this.element.classList.add("fadeInRight");
+        this.element.classList.remove("fadeOut");
+        this.element.classList.add("fadeIn");
         counterOne(); // "do something" happens
     } else if(direction === "up") {
-        this.element.classList.remove("fadeInRight");
-        this.element.classList.add("fadeOutRight");
+        this.element.classList.remove("fadeIn");
+        this.element.classList.add("fadeOut");
     }   
 }, {
     offset: '75%'
 })
+
+
+setTimeout(function(){
+    $('#loading-screen').fadeOut();
+}, 5000);

@@ -50,15 +50,20 @@
             var y = window.innerHeight*4*Math.random();
             var color = colors[Math.floor(i%colors.length)];
             var alpha = 0.2 + Math.random()*0.5;
+            var blurFilter = new createjs.BlurFilter(8, 8, 1);
+            var bounds = blurFilter.getBounds();
             circle.alpha = alpha;
             circle.radius = r;
             circle.graphics.beginFill(color).drawCircle(0, 0, r);
             circle.x = x;
             circle.y = y;
+            circle.filters = [blurFilter];
+            circle.cache(-50+bounds.x, -50+bounds.y, 100+bounds.width, 100+bounds.height);
             circles.push(circle);
             stage.addChild(circle);
             circle.movement = 'float';
             tweenCircle(circle);
+     
         }
     }
 
@@ -140,34 +145,6 @@
 
         });
     }
-
-    function createText(t) {
-        var fontSize = 860/(t.length);
-        if (fontSize > 160) fontSize = 160;
-        text.text = t;
-        text.font = "900 "+fontSize+"px 'Source Sans Pro'";
-        text.textAlign = 'center';
-        text.x = 300;
-        text.y = (172-fontSize)/2;
-        textStage.addChild(text);
-        textStage.update();
-
-        var ctx = document.getElementById('text').getContext('2d');
-        var pix = ctx.getImageData(0,0,600,200).data;
-        textPixels = [];
-        for (var i = pix.length; i >= 0; i -= 4) {
-            if (pix[i] != 0) {
-                var x = (i / 4) % 600;
-                var y = Math.floor(Math.floor(i/600)/4);
-
-                if((x && x%8 == 0) && (y && y%8 == 0)) textPixels.push({x: x, y: y});
-            }
-        }
-
-        formText();
-
-    }
-
 
     window.onload = function() { init() };
 })();

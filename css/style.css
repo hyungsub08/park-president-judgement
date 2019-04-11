@@ -105,7 +105,7 @@ nav .navMenu.active {
 }
 
 section {
-  min-height: 1024px;
+  min-height: 100%;
   padding: 160px 20px;
   display: flex;
   flex-direction: column;
@@ -157,7 +157,7 @@ section p {
 section.s1 {
   padding: 100px 20px 140px;
   max-width: none;
-  height: 100%;
+  height: auto;
 }
 section.s1 .contWrapper {
   padding: 20px;

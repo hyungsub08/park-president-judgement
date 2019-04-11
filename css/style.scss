@@ -158,7 +158,8 @@ nav {
 }
 
 section {
-    min-height: 1024px;
+    // min-height: 1024px;
+    min-height: 100%;
     padding: 160px 20px;
     display: flex;
     flex-direction: column;
@@ -226,7 +227,7 @@ section {
 section.s1 {
     padding: 100px 20px 140px;
     max-width: none;
-    height: 100%;
+    height: auto;
 
     .contWrapper {
         padding: 20px;

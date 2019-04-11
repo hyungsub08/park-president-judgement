@@ -325,6 +325,7 @@ section.s11 {
   background-position: center;
   padding: 260px 20px 360px;
   z-index: 114;
+  height: 100%;
 }
 section.s11::before {
   content: "";
@@ -398,8 +399,7 @@ section.s13::before {
 
 #load {
   width: 150px;
-  -webkit-animation: loading 3s linear infinite;
-          animation: loading 3s linear infinite;
+  animation: loading 3s linear infinite;
 }
 #load #loading-inner {
   stroke-dashoffset: 0;
@@ -407,39 +407,17 @@ section.s13::before {
   stroke-width: 10;
   stroke-miterlimit: 10;
   stroke-linecap: round;
-  -webkit-animation: loading-circle 2s linear infinite;
-          animation: loading-circle 2s linear infinite;
+  animation: loading-circle 2s linear infinite;
   stroke: #ffa707;
   fill: transparent;
 }
 
-@-webkit-keyframes loading {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 @keyframes loading {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes loading-circle {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -600;
+    transform: rotate(360deg);
   }
 }
 @keyframes loading-circle {
@@ -450,3 +428,5 @@ section.s13::before {
     stroke-dashoffset: -600;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -107,6 +107,9 @@ nav .navMenu.active {
 section {
   min-height: 1024px;
   padding: 160px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -154,6 +157,7 @@ section p {
 section.s1 {
   padding: 100px 20px 140px;
   max-width: none;
+  height: 100%;
 }
 section.s1 .contWrapper {
   padding: 20px;
@@ -190,7 +194,7 @@ section.s3::before {
   top: 0;
 }
 section.s3 .contWrapper {
-  margin: 0 20px;
+  margin: 0 auto;
 }
 section.s3 ul.contList li {
   text-align: left;
@@ -326,8 +330,6 @@ section.s11 {
   background-position: center;
   padding: 260px 20px 360px;
   z-index: 114;
-  min-height: 1024px;
-  height: 100%;
 }
 section.s11::before {
   content: "";

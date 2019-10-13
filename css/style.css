@@ -432,5 +432,13 @@ section.s13::before {
     stroke-dashoffset: -600;
   }
 }
+@media (print), (prefers-reduced-motion: reduce) {
+  html body * {
+    opacity: 1 !important;
+  }
+}
+section::before {
+  z-index: -1 !important;
+}
 
 /*# sourceMappingURL=style.css.map */

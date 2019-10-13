@@ -164,7 +164,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 
     .contWrapper {
         padding: 20px;
@@ -189,7 +189,7 @@ section {
 
     h1 {
         margin-bottom: 10px;
-        line-height: 1.4;   
+        line-height: 1.4;
     }
 
     h2 {
@@ -306,6 +306,7 @@ section.s4 {
         @include beforeShadow(0);
 
     }
+
     // background: #001438;
     // background: #282537;
     // background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
@@ -333,7 +334,7 @@ section.s5 {
 
     &::before {
         @include beforeShadow(0.8);
-        background-color:#4c0000;
+        background-color: #4c0000;
     }
 }
 
@@ -346,7 +347,7 @@ section.s6 {
 
     &::before {
         @include beforeShadow(0.8);
-  
+
     }
 }
 
@@ -363,35 +364,41 @@ section.s7 {
 }
 
 section.s8 {
-@extend %sectionBoxShadow;
-@include backgroundImage('../img/choi-01.jpg');
-padding: 260px 20px 260px; 
-&::before {
-    @include beforeShadow(0.8);
-    background-color: #092306;
-}
-z-index:112;
+    @extend %sectionBoxShadow;
+    @include backgroundImage('../img/choi-01.jpg');
+    padding: 260px 20px 260px;
+
+    &::before {
+        @include beforeShadow(0.8);
+        background-color: #092306;
+    }
+
+    z-index:112;
 }
 
 section.s10 {
-@extend %sectionBoxShadow;
-@include backgroundImage('../img/judge02.jpg');
-padding: 260px 20px 360px; 
-&::before {
-    @include beforeShadow(0.8);
-    background-color: #562f03;
-}
-z-index: 113;
+    @extend %sectionBoxShadow;
+    @include backgroundImage('../img/judge02.jpg');
+    padding: 260px 20px 360px;
+
+    &::before {
+        @include beforeShadow(0.8);
+        background-color: #562f03;
+    }
+
+    z-index: 113;
 }
 
 section.s11 {
     @extend %sectionBoxShadow;
     @include backgroundImage('../img/candle02.jpg');
-    padding: 260px 20px 360px; 
+    padding: 260px 20px 360px;
+
     &::before {
         @include beforeShadow(0.7);
         // background-color: #2b2b00;
     }
+
     z-index: 114;
 }
 
@@ -399,6 +406,7 @@ section.s12 {
     @extend %sectionBoxShadow;
     @include backgroundImage('../img/order.jpg');
     z-index: 115;
+
     &::before {
         @include beforeShadow(0.7);
         // background-color: #3e3201;
@@ -407,6 +415,7 @@ section.s12 {
     .contWrapper {
         padding: 800px 20px 100px;
     }
+
     // background: #092756;
     // background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
     // background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
@@ -416,67 +425,85 @@ section.s12 {
 }
 
 section.s13 {
-@extend %sectionBoxShadow;
-@include backgroundImage('../img/sewol03.jpg');
+    @extend %sectionBoxShadow;
+    @include backgroundImage('../img/sewol03.jpg');
 
     padding: 300px 20px 300px;
-z-index: 116;
-&::before {
-    @include beforeShadow(0.7);
-    background-color: #3c3100;
-}
+    z-index: 116;
+
+    &::before {
+        @include beforeShadow(0.7);
+        background-color: #3c3100;
+    }
 
 }
 
 #loading-screen {
-        height: 100%;
-        position: fixed;
-        z-index: 1000;
-        background: black;
-        width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    background: black;
+    width: 100%;
 }
+
 .loading-bro {
     margin: 50px auto;
     width: 150px;
-    > h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 1em;
-      font-weight: 300;
-      color: #8E8E8E;
+
+    >h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        font-weight: 300;
+        color: #8E8E8E;
     }
-  }
-  
-  #load {
-          width: 150px;
-      animation: loading 3s linear infinite;
-      #loading-inner {
-            stroke: {
-          dashoffset: 0;
-          dasharray: 300;
-          width: 10;
-          miterlimit: 10;
-          linecap: round;
+}
+
+#load {
+    width: 150px;
+    animation: loading 3s linear infinite;
+
+    #loading-inner {
+        stroke: {
+            dashoffset: 0;
+            dasharray: 300;
+            width: 10;
+            miterlimit: 10;
+            linecap: round;
         }
+
         animation: loading-circle 2s linear infinite;
         stroke: #ffa707;
         fill: transparent;
-      }
-      }
-  
-  @keyframes loading {
-          0% { 
-        transform: rotate(0); 
-      }
-          100% { 
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
         transform: rotate(360deg);
-      }
-  }
-  @keyframes loading-circle {
-          0% { 
+    }
+}
+
+@keyframes loading-circle {
+    0% {
         stroke-dashoffset: 0
-      }
-          100% { 
+    }
+
+    100% {
         stroke-dashoffset: -600;
-      }
-  }
+    }
+}
+
+@media (print), (prefers-reduced-motion: reduce) {
+	html body * {
+		opacity: 1 !important;
+    }
+}
+
+section::before {
+    z-index: -1 !important;
+}
